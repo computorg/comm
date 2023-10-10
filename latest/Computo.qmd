@@ -54,7 +54,7 @@ IMT Toulouse</small>
 #### Marie-Pierre Étienne
 
 <small>Statistique, MCF<br/>
-AgroCampusOuest</small>
+Institut Agro Rennes-Angers</small>
 
 ![](../people/marie-pierre.jpg){width='120'} 
 
