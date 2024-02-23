@@ -145,28 +145,28 @@ LBMC, ENS LYON</small>
 
 😱 ↘ of publication quality and time dedicated to each article (on author or reviewer sides) [@hanson2023]
 
-😱 issue with *scientific* reproducibility (analyses, experiments) [@ioannidis2005; @steen2011; @allison2016; @bastian2016; @whitfield2021; @hernandez2023]
+😱 Issue with *scientific* reproducibility (analyses, experiments) [@ioannidis2005; @steen2011; @allison2016; @bastian2016; @whitfield2021; @hernandez2023]
 
 ::: 
 
 ::: {.callout-tip}
 ### Point of view
-- need for renewal regarding scientific research implementation
-- need for higher standard regarding result publications
+- Need for renewal regarding scientific research implementation
+- Need for higher standard regarding result publications
 ::: 
 
-$\rightsquigarrow$ Emergence of "Computo" idea
+⇝ Emergence of "Computo" idea
 
 ## Philosophy
 
 ::: {.callout-note}
 
 ### Scientific perimeter
-**Promote contribution in statistics and machine learning that provide insight into which models or methods are more appropriate to address a specific scientific question**
+Promote contribution in **statistics** and **machine learning** that provide insight into which models or methods are more appropriate to address a specific scientific question
 :::
 
 ::: {.callout-tip}
-### Open
+### Open access
 
 :::: {.columns}
 ::: {.column width="90%"}
@@ -175,7 +175,7 @@ $\rightsquigarrow$ Emergence of "Computo" idea
 - 🅭 🅯 Content published under [CC-BY](https://creativecommons.org/licenses/by/4.0/) license (attribution, share, adapt)
 - Reviews and discussions available after acceptance for publication (anonymous reviews)
 
-$\rightsquigarrow$ In accordance with [Budapest Open Access Initiative (BOAI)](https://www.budapestopenaccessinitiative.org/) and [Plan S](https://www.coalition-s.org/addendum-to-the-coalition-s-guidance-on-the-implementation-of-plan-s/principles-and-implementation/)
+⇝ In accordance with [Budapest Open Access Initiative (BOAI)](https://www.budapestopenaccessinitiative.org/) and [Plan S](https://www.coalition-s.org/addendum-to-the-coalition-s-guidance-on-the-implementation-of-plan-s/principles-and-implementation/)
 
 :::
 ::: {.column width="10%"}
@@ -237,7 +237,7 @@ Notebook and literate programming</br><small>text (markdown) + math ($\LaTeX$) +
 
 ### Publication system
 
-Environment management, Compilation, Multi-format publication (pdf, html)<br><small>[Continuous integration/Continuous deployment (CI/CD)](https://en.wikipedia.org/wiki/Continuous_integration)</small>
+Environment management, Compilation, Multi-format publication (pdf, html)<br><small>Continuous integration/Continuous deployment (CI/CD)</small>
 
 ### Reviewing system
 
@@ -284,30 +284,40 @@ title: "My article"
 
 We compute 1+1:
 
-\`\`\{r}
+\`\`\`{r}
 1+1
 \`\`\`
 ```
 
 ## Note on quarto
 
-[![](img/quarto.png){height=80px}](https://quarto.org) <https://quarto.org>
+<br>
 
-- inspired from [`Rmarkdown`](https://pkgs.rstudio.com/rmarkdown/)
-- relying on top community tools like universal document converter [`Pandoc`](https://pandoc.org/)
-- developed and supported by RStudio/Posit
-- native support of complex documents (website, articles, books) and multiple languages for computations (R, Python, Julia)
-- management of references, citations, figures, tables, metadata, etc.
+:::{.r-stack}
+[![](img/quarto.png){height=80px}](https://quarto.org) <https://quarto.org>
+:::
+
+<br>
+
+- Generalization of [`Rmarkdown`](https://pkgs.rstudio.com/rmarkdown/)
+- Relying on top community tools like universal document converter [`Pandoc`](https://pandoc.org/)
+- Developed and supported by RStudio/Posit
+- Native support of complex documents (website, articles, books) and multiple languages for computations (R, Python, Julia)
+- Management of references, citations, figures, tables, metadata, etc.
 
 
 ## Note on [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration)
 
-- implementation in git forges (e.g. [github actions](https://github.com/features/actions) or [gitlab CI/CD](https://about.gitlab.com/topics/ci-cd/))
-- triggered by commits
-- automatic tests
-- automatic deployment: package/software publication, website
+- Implementation in git forges (e.g. [github actions](https://github.com/features/actions) or [gitlab CI/CD](https://about.gitlab.com/topics/ci-cd/))
+- Triggered by commits
+- Automatic tests
+- Automatic deployment: package/software publication, website
 
-[![](img/continuous_integration.jpg){width=700px fig-align="center"}](https://en.wikipedia.org/wiki/File:Continuous_Integration.jpg) <small>Credit: Pratik89Roy [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en) from [Wikimedia](https://en.wikipedia.org/wiki/File:Continuous_Integration.jpg)</small>
+[![](img/continuous_integration.jpg){width=600px fig-align="center"}](https://en.wikipedia.org/wiki/File:Continuous_Integration.jpg)
+
+:::{.r-stack}
+<small>Credit: Pratik89Roy [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en) from [Wikimedia](https://en.wikipedia.org/wiki/File:Continuous_Integration.jpg)</small>
+:::
 
 
 ## Tools for authors
@@ -396,7 +406,7 @@ Let's go, locally (same spirit as Jupyter/Rmarkdown notebooks)
 :::: {.columns}
 ::: {.column width="75%"}
 
-`venv`: use a virtual environment and generate the `requirement.txt` file that is versionned and used during CI compilation/publication action
+`venv`: use a virtual environment and generate the `requirements.txt` file
 
 :::
 ::: {.column width="25%"}
@@ -417,7 +427,7 @@ numpy
 :::: {.columns}
 ::: {.column width="58%"}
 
-`renv`: generate the `renv.lock` file that is versionned and used during CI compilation/publication action
+`renv`: generate the `renv.lock` file
 
 :::
 ::: {.column width="42%"}
@@ -437,7 +447,7 @@ renv::snapshot()
 :::: {.columns}
 ::: {.column width="75%"}
 
-`Pkg`: native `Julia` package manager. The generated `Project.toml` et `Manifest.toml` files are versionned and used during CI compilation/publication action
+`Pkg`: native `Julia` package manager (with generated `Project.toml` et `Manifest.toml` files)
 
 :::
 ::: {.column width="25%"}
@@ -452,13 +462,15 @@ add IJulia
 
 :::
 
+<small>Configuration file versionned and used during CI compilation/publication action</small>
+
 ### Step 3: (re)production
 
 A `git push` command will trigger your article compilation (including computations) and publication as a [*github* page](https://pages.github.com)^[or as a *gitlab* page when *gitlab* will be supported (soon)]
 
-See the preconfigured `.github/workflows/build.yml` file for the *github* action configuration^[and soon the `.gitlab-ci.yml` file for the *gitlab* CI/CD configuration]
+<small>See the preconfigured `.github/workflows/build.yml` file for the *github* action configuration^[and soon the `.gitlab-ci.yml` file for the *gitlab* CI/CD configuration]</small>
 
-## Author point of view (1/3)
+## Author point of view (3/3)
 
 :::: {.columns}
 ::: {.column width="70%"}
@@ -537,7 +549,7 @@ including
 
 🤯 Difficult to find reviewers
 
-🤔 Institional support?
+🤔 Institutional support?
 
 🤔 Changing of practices in the scientific community?
 
@@ -547,7 +559,7 @@ including
 
 ### About several choices
 
-- [`quarto`](https://quarto.org/): dynamic, agnostic language, [FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software)^["free and open-source"], community-based ([`pandoc`](https://pandoc.org/)), Rstudio/Posit suppor
+- [`quarto`](https://quarto.org/): dynamic, agnostic language, [FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software)^["free and open-source"], community-based ([`pandoc`](https://pandoc.org/)), Rstudio/Posit support
 - [`github`](https://github.com): dynamic, large user community but not institutional and limited computing resources
 
 ### Comparison/inspiration
@@ -592,4 +604,3 @@ including
 
 ::: {#refs}
 :::
-
