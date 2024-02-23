@@ -20,6 +20,8 @@ format:
       data-background-size: 18%
       data-background-position: top 25px left	25px
     preview-links: auto
+bibliography: references.bib
+csl: journal-of-open-research-software.csl
 ---
 
 ## Team
@@ -141,9 +143,9 @@ LBMC, ENS LYON</small>
 
 😥 No or not enough valorization of source codes and case studies
 
-😱 ↘ of publication quality and time dedicated to each article (on author or reviewer sides)
+😱 ↘ of publication quality and time dedicated to each article (on author or reviewer sides) [@hanson2023]
 
-😱 issue with *scientific* reproducibility (analyses, experiments)
+😱 issue with *scientific* reproducibility (analyses, experiments) [@ioannidis2005; @steen2011; @allison2016; @bastian2016; @whitfield2021; @hernandez2023]
 
 ::: 
 
@@ -190,6 +192,25 @@ $\rightsquigarrow$ In accordance with [Budapest Open Access Initiative (BOAI)](h
 - Source code and data should be available, at least partly executed and fully executable
 :::
 
+## Note on reproducible research [@desquilbet2019; @hejblum2020; @the_turing_way2022]
+
+#### Why reproducing scientific results?
+
+- To strengthen their credibility
+- To check for errors (everyone makes error at some point!!!)
+- To build new research upon them (science is incremental)
+
+#### Issues?
+
+- Reproduce numerical scientific results is often difficult (technology/environment evolution, source code/environment configuration/software partially available or not available)
+- Waste of time and resources to reproduce existing non-reproducible results
+
+#### Reproducible research?
+
+- For others but also **for your future self**
+- Improve result credibility
+- Facilitate future research works
+
 ## Setup
 
 Official launch at the end of 2021
@@ -216,7 +237,7 @@ Notebook and literate programming</br><small>text (markdown) + math ($\LaTeX$) +
 
 ### Publication system
 
-Environment management, Compilation, Multi-format publication (pdf, html)<br><small>[Continuous integration/Continuous deployement (CI/CD)](https://en.wikipedia.org/wiki/Continuous_integration)</small>
+Environment management, Compilation, Multi-format publication (pdf, html)<br><small>[Continuous integration/Continuous deployment (CI/CD)](https://en.wikipedia.org/wiki/Continuous_integration)</small>
 
 ### Reviewing system
 
@@ -243,6 +264,51 @@ Scientific validation
 
 :::
 ::::
+
+
+## Note on literate programming
+
+<br>
+
+- Literate programming [@knuth1984]: notebook including text and code
+- Markup formatting language: e.g. [`markdown`](https://fr.wikipedia.org/wiki/Markdown)
+- Separate content from rendering (≠ ["what you see is what you get"](https://en.wikipedia.org/wiki/WYSIWYG) editors)
+- Rendering includes text, code and results (from code computations)
+
+<br>
+
+```markdown
+---
+title: "My article"
+---
+
+We compute 1+1:
+
+\`\`\{r}
+1+1
+\`\`\`
+```
+
+## Note on quarto
+
+[![](img/quarto.png){height=80px}](https://quarto.org) <https://quarto.org>
+
+- inspired from [`Rmarkdown`](https://pkgs.rstudio.com/rmarkdown/)
+- relying on top community tools like universal document converter [`Pandoc`](https://pandoc.org/)
+- developed and supported by RStudio/Posit
+- native support of complex documents (website, articles, books) and multiple languages for computations (R, Python, Julia)
+- management of references, citations, figures, tables, metadata, etc.
+
+
+## Note on [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration)
+
+- implementation in git forges (e.g. [github actions](https://github.com/features/actions) or [gitlab CI/CD](https://about.gitlab.com/topics/ci-cd/))
+- triggered by commits
+- automatic tests
+- automatic deployment: package/software publication, website
+
+[![](img/continuous_integration.jpg){width=700px fig-align="center"}](https://en.wikipedia.org/wiki/File:Continuous_Integration.jpg) <small>Credit: Pratik89Roy [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en) from [Wikimedia](https://en.wikipedia.org/wiki/File:Continuous_Integration.jpg)</small>
+
 
 ## Tools for authors
 
@@ -521,3 +587,9 @@ including
 <br>
 
 ![](img/computo_concept.png){width=600px fig-align="center"}
+
+## References {.scrollable .smaller}
+
+::: {#refs}
+:::
+
