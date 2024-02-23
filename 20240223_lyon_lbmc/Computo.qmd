@@ -568,7 +568,7 @@ including
 - <https://rescience.github.io/>: "remake" published articles
 - <https://distill.pub> (discontinued): technically more complicated and only ML/AI oriented
 
-## Perpectives
+## Perspectives
 
 <br>
 
