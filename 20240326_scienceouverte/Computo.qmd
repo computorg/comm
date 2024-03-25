@@ -209,7 +209,7 @@ Validation scientifique
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="49%"}
 
 ### Modèle de soumission
 
@@ -245,21 +245,21 @@ modèles de document + doc + services de publication pré-configurés
 
 ## Point de vue l'auteur.e (1/3)
 
-### Étape 0: mise en place d'un dépôt git
+#### Étape 0: mise en place d'un dépôt git
 
-Démarrage à l'aide d'un dépôt template ([R](https://github.com/computorg/template-computo-R), [Python](https://github.com/computorg/template-computo-python), [Julia](https://github.com/computorg/template-computo-julia)) [![](img/computo_use_template.png){height=20px}](https://github.com/computorg/template-computo-python)
+Démarrage à l'aide d'un dépôt template ([R](https://github.com/computorg/template-computo-R), [Python](https://github.com/computorg/template-computo-python), [Julia](https://github.com/computorg/template-computo-julia)) [![](img/computo_use_template.png){height=21px fig-align="center"}](https://github.com/computorg/template-computo-python)
 
-### Étape 1. Écriture de l'article
+#### Étape 1: Écriture de l'article
 
 À vous de jouer, en local (même esprit qu'en Jupyter/Rmarkdown)
 
-### Étape 2: configuration de l'environnement
+#### Étape 2: configuration de l'environnement
 
 ::: {.panel-tabset}
 
-#### Exemple en Python
+##### Exemple en Python
 
-`venv`: fichier `requirement.txt`
+`venv`: fichier `requirements.txt`
 
 ```yaml
 jupyter
@@ -270,7 +270,7 @@ numpy
 Le fichier `requirements.txt` est versionné et utilisé dans l'action de compilation/publication
 
 
-#### Exemple en R
+##### Exemple en R
 
 `renv`: générer le fichier `renv.lock` à l'aide du package dédié
 
@@ -282,7 +282,7 @@ renv::snapshot()
 
 Le fichier `renv.lock` est versionné et utilisé dans l'action de compilation/publication
 
-#### Exemple en Julia
+##### Exemple en Julia
 
 `Pkg`: gestionnaire de package natif de `Julia`
 
@@ -297,7 +297,7 @@ Les fichiers `Project.toml` et `Manifest.toml` sont générés et versionnés et
 
 ## Point de vue de l'auteur.e (2/3)
 
-### Étape 3: reproductibilité
+#### Étape 3: reproductibilité
 
 Un `git push` lancera l'action dédiée à la compilation et la publication
 ``` yaml
@@ -336,18 +336,18 @@ jobs:
 
 ### Étape 4: soumission
 
-Si le processus d'action a fonctionné, un document HTML et une version PDF sous publiée [sur la github-page associé au dépôt](https://github.com/computorg/template-computo-python/)
+Si le processus d'action a fonctionné, un document HTML et une version PDF sont publiés [sur la github-page associée au dépôt](https://github.com/computorg/template-computo-python/)
 
 <br/><br/>
 
-#### <s>Scholastica</s> Open review
+#### OpenReview (gratuit, open source)
 
 <https://openreview.net/group?id=Computo>
 
-Dépôt
+Dépôt:
 
-  - du PDF (relecture contenu scientifique)
-  - de l'adresse du dépôt git (reproductibilité)
+- du PDF (relecture contenu scientifique)
+- de l'adresse du dépôt git (reproductibilité)
 
 :::
 
@@ -367,7 +367,7 @@ Dépôt
 
 ::: {.column width="70%"}
 
-Une fois le processus de relecture "traditionnel" achevé, un processus  en 3 phases
+Une fois le processus de relecture "traditionnel" achevé, un processus en 3 phases
 
 1. Acceptation
 2. Pré-production
@@ -378,8 +378,8 @@ incluant
 - Copie du dépôt de l'auteur.e
 - Mise en forme de la version finale
 - Publication des rapports de relecteurs/trices
-- Entrée dans la base bibliograhique du journal
-- Copie sur [Software Heritage](https://archive.softwareheritage.org/browse/search/?q=computorg%2Fpublished&with_visit=true&with_content=true)
+- Entrée dans la base bibliographique du journal
+- Archivage sur [Software Heritage](https://archive.softwareheritage.org/browse/search/?q=computorg%2Fpublished&with_visit=true&with_content=true)
 
 :::
 
@@ -393,19 +393,17 @@ incluant
 
 ::::
 
-## Bilan après un an et demi de fonctionnement
+## Bilan après deux ans de fonctionnement
 
 <br/>
 
-🥲 Processus opérationnel + doi, ISSN
+🥲 Processus opérationnel + DOI, ISSN, google scholar
 
-🙂 4 articles publiés, 4 en révision, 3 en relecture
+🙂 8 articles publiés, 4 en révision, 4 en relecture
 
-🙂 x présentations (Montpellier, Toronto, Humastica, Grenoble, RR2023)
+🙂 x présentations (Montpellier, Toronto, Humastica, Grenoble, RR2023, ...)
 
 🙂 [Réseau français Science Reproductible](https://www.recherche-reproductible.fr/)
-
-🤯 Difficulté à trouver des relecteurs
 
 🤔 Support institutionnel ?
 
@@ -439,12 +437,12 @@ incluant
 - `quarto`: dynamique, langage agnostique, issu de la communauté (pandoc)
 - `Github`: dynamique, lien avec `quarto`, pas institutionnel
 
-### Perpectives
+### Perspectives
 
 - Mise à disposition de moyens computationnels
 - Support Gitlab complet (CI, docker, registre, etc.)
 
-### Positionement/inspiration
+### Positionnement/inspiration
 
 - [Peer Community-In](https://peercommunityin.org/), [EpiSciences](https://www.episciences.org/) : philosophie différente
 - <https://rescience.github.io/> : "remake' de l'existant
