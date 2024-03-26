@@ -8,6 +8,7 @@ date-format: long
 lang: fr
 format:
   revealjs:
+    code-fold: false
     self-contained: true
     scrollable: false
     theme: [default, computo.scss]
@@ -202,8 +203,17 @@ Validation scientifique
 - basé sur pandoc (conversion de documents)
 - documents dynamiques et reproductibles
 - syntaxe : variation de markdown (basé sur pandoc)
+- mélange de texte et de code
 - compatibilité LaTeX (figures, mise en page, etc)
 - VSCode, Rstudio, JupyterLab
+
+
+Exemple:
+```{python}
+#| echo: true
+a = 1
+print(2 * a)
+```
 
 ## Les outils de l'auteur.e
 
