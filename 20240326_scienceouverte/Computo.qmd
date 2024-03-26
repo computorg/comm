@@ -96,7 +96,7 @@ Université Grenoble Alpes</small>
 ::: {.callout-note}
 ## Constat
 
-Multiplication des journaux "traditionnels"...
+Multiplication des journaux "traditionnels" mais...
 
 😔 dévalorisation des résultats négatifs
 
@@ -109,9 +109,9 @@ Multiplication des journaux "traditionnels"...
 :::
 
 ::: {.callout-tip}
-## Point de vue
-- besoin de renouvellement de la mise en œuvre de la recherche scientifique
-- besoin de normes plus élevées en matière de publication des résultats
+## Besoins
+- de renouvellement de la mise en œuvre de la recherche scientifique
+- de normes plus élevées en matière de publication des résultats
 :::
 
 $\rightsquigarrow$ Émergence de l'idée de Computo
@@ -162,7 +162,7 @@ Lancement officiel fin 2021
 
 ### Système d'écriture
 
-texte (markdown) + math ($\LaTeX$) + code (Python/R/Julia), biblio (bib$\TeX$)
+texte (markdown) + math (LaTeX) + code (Python/R/Julia), biblio (bibTeX)
 
 ### Système de publication
 
@@ -195,6 +195,15 @@ Validation scientifique
 :::
 
 ::::
+
+## [Quarto](https://quarto.org/)
+
+- génération de documents de qualité dans différents formats (pdf, HTML, ces slides...)
+- basé sur pandoc (conversion de documents)
+- documents dynamiques et reproductibles
+- syntaxe : variation de markdown (basé sur pandoc)
+- compatibilité LaTeX (figures, mise en page, etc)
+- VSCode, Rstudio, JupyterLab
 
 ## Les outils de l'auteur.e
 
@@ -334,7 +343,7 @@ jobs:
 
 ::: {.column width="60%"}
 
-### Étape 4 : soumission
+#### Étape 4 : soumission
 
 Si le processus d'action a fonctionné, un document HTML et une version PDF sont publiés [sur la github-page associée au dépôt](https://github.com/computorg/template-computo-python/)
 
@@ -449,12 +458,13 @@ incluant
 
 - [Peer Community-In](https://peercommunityin.org/), [EpiSciences](https://www.episciences.org/) : philosophie différente
 - <https://rescience.github.io/> : "remake' de l'existant
-- <https://distill.pub> : techniquement compliqué et pur IA
+- <https://distill.pub> : visualisation/explication, mais techniquement compliqué et pur IA, fin du journal en 2021
 
 #### Défis actuels
 
-- données trop volumineuses
+- données très volumineuses
 - calculs intensifs (> 1 h)
 - évolution du code
+- soumission package : évolution des contributeurs dans le temps ?
 
 :::
