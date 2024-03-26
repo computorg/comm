@@ -199,7 +199,7 @@ Validation scientifique
 
 ## [Quarto](https://quarto.org/)
 
-- génération de documents de qualité dans différents formats (pdf, HTML, ces slides...)
+- génération de documents de qualité dans différents formats (pdf, HTML...)
 - basé sur pandoc (conversion de documents)
 - documents dynamiques et reproductibles
 - syntaxe : variation de markdown (basé sur pandoc)
@@ -468,7 +468,7 @@ incluant
 
 - [Peer Community-In](https://peercommunityin.org/), [EpiSciences](https://www.episciences.org/) : philosophie différente
 - <https://rescience.github.io/> : "remake' de l'existant
-- <https://distill.pub> : visualisation/explication, mais techniquement compliqué et pur IA, fin du journal en 2021
+- <https://distill.pub> : visualisation/explication, mais techniquement compliqué et pur IA, fin en 2021
 
 #### Défis actuels
 
