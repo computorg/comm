@@ -102,9 +102,9 @@ Multiplication des journaux "traditionnels"...
 
 😥 peu/pas assez de valorisation du code et des études de cas
 
-😱 &darr; de la qualité des publications et du temps consacré à un article
+😱 &darr; de la qualité des publications
 
-😱 &darr; de la reproductibilité _scientifique_ (analyses, expériences)
+😱 &darr; de la reproductibilité (analyses, expériences)
 
 :::
 
@@ -151,8 +151,8 @@ Lancement officiel fin 2021
 ### Modèle "économique"
 
 - Quelques acharné.e.s (quelques ulcères)
-- Outils de la communauté (Pandoc, Quarto, GitHub/lab)
-- Soutiens Institutionnels (INRAE, INRIA, CNRS, SFdS)
+- Outils open source/de la communauté (Pandoc, Quarto, GitHub/lab)
+- Soutiens institutionnels (INRAE, INRIA, CNRS, SFdS)
 
 ## Fonctionnement
 
@@ -177,9 +177,9 @@ Gestion de l'environnement, Compilation, Publication multiformats
 
 ::: {.column width="35%"}
 
-### Solutions/Proto
+### Outils
 
-Expérience renouvellée
+Expérience renouvelée
 
 [![](img/quarto.png){height=40px}](https://quarto.org)
 
@@ -245,15 +245,15 @@ modèles de document + doc + services de publication pré-configurés
 
 ## Point de vue l'auteur.e (1/3)
 
-#### Étape 0: mise en place d'un dépôt git
+#### Étape 0 : mise en place d'un dépôt git
 
 Démarrage à l'aide d'un dépôt template ([R](https://github.com/computorg/template-computo-R), [Python](https://github.com/computorg/template-computo-python), [Julia](https://github.com/computorg/template-computo-julia)) [![](img/computo_use_template.png){height=21px fig-align="center"}](https://github.com/computorg/template-computo-python)
 
-#### Étape 1: Écriture de l'article
+#### Étape 1 : écriture de l'article
 
 À vous de jouer, en local (même esprit qu'en Jupyter/Rmarkdown)
 
-#### Étape 2: configuration de l'environnement
+#### Étape 2 : configuration de l'environnement
 
 ::: {.panel-tabset}
 
@@ -297,7 +297,7 @@ Les fichiers `Project.toml` et `Manifest.toml` sont générés et versionnés et
 
 ## Point de vue de l'auteur.e (2/3)
 
-#### Étape 3: reproductibilité
+#### Étape 3 : reproductibilité
 
 Un `git push` lancera l'action dédiée à la compilation et la publication
 ``` yaml
@@ -334,13 +334,13 @@ jobs:
 
 ::: {.column width="60%"}
 
-### Étape 4: soumission
+### Étape 4 : soumission
 
 Si le processus d'action a fonctionné, un document HTML et une version PDF sont publiés [sur la github-page associée au dépôt](https://github.com/computorg/template-computo-python/)
 
 <br/><br/>
 
-#### OpenReview (gratuit, open source)
+#### [OpenReview](https://openreview.net/) (gratuit, open source)
 
 <https://openreview.net/group?id=Computo>
 
@@ -397,7 +397,7 @@ incluant
 
 <br/>
 
-🥲 Processus opérationnel + DOI, ISSN, google scholar
+🥲 Processus opérationnel + DOI, ISSN, Google scholar
 
 🙂 8 articles publiés, 4 en révision, 4 en relecture
 
@@ -413,7 +413,7 @@ incluant
 
 ::: {.column width="50%"}
 
-### Comment aider?
+### Comment aider ?
 
 - [En soumettant vos travaux!](https://computo.sfds.asso.fr/submit/)
 - En se proposant **relecteur/relectrice**
@@ -432,19 +432,29 @@ incluant
 
 ## Éléments de discussion
 
-### Sur certains choix
+::: {style="font-size: 75%;"}
+#### Sur certains choix
+
 
 - `quarto`: dynamique, langage agnostique, issu de la communauté (pandoc)
 - `Github`: dynamique, lien avec `quarto`, pas institutionnel
 
-### Perspectives
+
+#### Perspectives
 
 - Mise à disposition de moyens computationnels
 - Support Gitlab complet (CI, docker, registre, etc.)
 
-### Positionnement/inspiration
+#### Positionnement/inspiration
 
 - [Peer Community-In](https://peercommunityin.org/), [EpiSciences](https://www.episciences.org/) : philosophie différente
 - <https://rescience.github.io/> : "remake' de l'existant
 - <https://distill.pub> : techniquement compliqué et pur IA
 
+#### Défis actuels
+
+- données trop volumineuses
+- calculs intensifs (> 1 h)
+- évolution du code
+
+:::
