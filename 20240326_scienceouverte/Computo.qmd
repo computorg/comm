@@ -199,12 +199,11 @@ Validation scientifique
 
 ## [Quarto](https://quarto.org/)
 
-- génération de documents de qualité dans différents formats (pdf, HTML...)
+- génération de documents de qualité dans différents formats (pdf, HTML, ...)
 - basé sur pandoc (conversion de documents)
 - documents dynamiques et reproductibles
-- syntaxe : variation de markdown (basé sur pandoc)
-- mélange de texte et de code
-- compatibilité LaTeX (figures, mise en page, etc)
+- mélange de texte (markdown) et de code
+- compatibilité LaTeX (biblio, figures, ...)
 - VSCode, Rstudio, JupyterLab
 
 
