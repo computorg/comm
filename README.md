@@ -1,3 +1,3 @@
 # comm
 
-A place to store material to communicate about Computo
+A place to store material to communicate about Computo.
