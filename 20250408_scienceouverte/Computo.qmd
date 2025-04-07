@@ -133,7 +133,7 @@ Official launch at the end of 2021
 - Free/Open-source community tools (Pandoc, Quarto, Git forge)
 - Institutional support (AgroParisTech, CNRS, INRAE, INRIA, SFdS)
 
-![](img/logo_CNRS.svg){height=40} ![](img/logo_INRAE.svg){height=40} ![](img/logo_APT.svg){height=40}
+![](img/logo_CNRS.svg){height=40} ![](img/logo_INRAE.svg){height=40} ![](img/logo_APT.svg){height=40} AAP Science Ouverte 🤩
 
 ## Motivations
 
