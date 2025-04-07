@@ -124,8 +124,8 @@ Jean Leray, Univ. Nantes</small>
 
 Official launch at the end of 2021
 
-<center>[![](img/computo_website.png){height=280px}](https://computo.sfds.asso.fr)
-[![](img/computo_github-group.png){height=280px}](https://github.com/computorg/)</center>
+<center>[![](img/computo_website.png){height=230px}](https://computo.sfds.asso.fr)
+[![](img/computo_github-group.png){height=230px}](https://github.com/computorg/)</center>
 
 ### "Economical" model
 
@@ -133,7 +133,7 @@ Official launch at the end of 2021
 - Free/Open-source community tools (Pandoc, Quarto, Git forge)
 - Institutional support (AgroParisTech, CNRS, INRAE, INRIA, SFdS)
 
-![](img/logo_CNRS.svg){height=70} ![](img/logo_INRAE.svg){height=70} ![](img/logo_APT.svg){height=70}
+![](img/logo_CNRS.svg){height=40} ![](img/logo_INRAE.svg){height=40} ![](img/logo_APT.svg){height=40}
 
 ## Motivations
 
