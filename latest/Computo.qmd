@@ -1,7 +1,7 @@
 ---
 title: "COMPUTO"
 subtitle: "An academic journal in statistics and machine learning promoting reproducibility and alternative publication mode"
-footer: <https://computo.sfds.asso.fr>
+footer: <https://computo-jounral.org>
 logo: img/logo_text_vertical.png
 date: 2025-04-08
 date-format: long
@@ -124,7 +124,7 @@ Jean Leray, Univ. Nantes</small>
 
 Official launch at the end of 2021
 
-<center>[![](img/computo_website.png){height=230px}](https://computo.sfds.asso.fr)
+<center>[![](img/computo_website.png){height=230px}](https://computo-journal.org)
 [![](img/computo_github-group.png){height=230px}](https://github.com/computorg/)</center>
 
 ### "Economical" model
@@ -316,11 +316,11 @@ Scientific validation
 #### Document template
 
 ::: {style="font-size: 90%;"}
-[Git `template` repository](https://computo.sfds.asso.fr/repos/)
+[Git `template` repository](https://github.com/computorg/)
 
 with template notebook document + doc + pre-configured compilation and publication setup
 
-[![](img/computo_template_repositories.png)](https://computo.sfds.asso.fr/repos/)
+[![](img/computo_template_repositories.png)](https://github.com/computorg/)
 :::
 
 :::
@@ -526,7 +526,7 @@ including
 
 🥲 Fully operational + doi, ISSN
 
-🙂 15 published articles articles, 5 under review (more details [here](https://computo.sfds.asso.fr/publications/))
+🙂 15 published articles articles, 5 under review (more details [here](https://computo-journal.org/site/publications.html))
 
 🙂 x presentations (Montpellier, Toronto, Humastica, Grenoble, RR2023, etc.)
 
@@ -558,12 +558,12 @@ including
 :::: {.columns}
 ::: {.column width="50%"}
 
-- By submitting^[<https://computo.sfds.asso.fr/submit/>] your work!
+- By submitting^[<https://computo-journal.org/site/guidelines-authors.html>] your work!
 
 :::
 ::: {.column width="50%"}
 
-- By becoming reviewer^[contact us at <computo@sfds.asso.fr>]
+- By becoming reviewer^[contact us at <contact@computo-journal.org>]
 
 :::
 ::::
