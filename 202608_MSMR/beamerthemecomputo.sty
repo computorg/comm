@@ -1,0 +1,215 @@
+% ---------------------------------------------------------------------------
+% beamerthemecomputo -- Computo journal beamer theme
+% LaTeX/beamer transposition of the reveal.js stylesheet `computo.scss`
+% (colors, Oswald headings / Open Sans body, callout blocks).
+% Requires XeLaTeX or LuaLaTeX (fontspec).
+% ---------------------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemecomputo}[2026/08/26 Computo beamer theme]
+
+\RequirePackage{tikz}
+\RequirePackage{amssymb}
+\RequirePackage{etoolbox}
+
+% --- options --------------------------------------------------------------
+\newif\ifcomputo@sansfonts \computo@sansfontstrue
+\DeclareOption{nofonts}{\computo@sansfontsfalse}
+\ProcessOptions\relax
+
+% --- palette (mirrors computo.scss) ---------------------------------------
+\definecolor{computo}{HTML}{034E79}       % $computo-color
+\definecolor{computodark}{HTML}{02334F}   % darken(computo, 10%)
+\definecolor{computolight}{HTML}{CDE7F8}  % lighten(computo, 60%)
+\definecolor{darkblue}{HTML}{0F2E3D}      % $dark-blue
+\definecolor{greyc}{HTML}{828282}         % $grey-color
+\definecolor{greylight}{HTML}{E8E8E8}
+\definecolor{greydark}{HTML}{454545}
+\definecolor{codebg}{HTML}{F2F6F9}        % rgba(computo, .05) flattened
+\definecolor{accent}{HTML}{C1553B}        % warm accent for emphasis
+
+\setbeamercolor{normal text}{fg=black, bg=white}
+\setbeamercolor{alerted text}{fg=accent}
+\setbeamercolor{example text}{fg=computodark}
+\setbeamercolor{structure}{fg=computo}
+
+\setbeamercolor{title}{fg=computodark}
+\setbeamercolor{subtitle}{fg=greydark}
+\setbeamercolor{author}{fg=greydark}
+\setbeamercolor{institute}{fg=greyc}
+\setbeamercolor{date}{fg=greyc}
+
+\setbeamercolor{frametitle}{fg=computodark, bg=white}
+\setbeamercolor{framesubtitle}{fg=greydark}
+\setbeamercolor{section in toc}{fg=computodark}
+\setbeamercolor{subsection in toc}{fg=greydark}
+
+\setbeamercolor{itemize item}{fg=computo}
+\setbeamercolor{itemize subitem}{fg=computo}
+\setbeamercolor{itemize subsubitem}{fg=computo}
+\setbeamercolor{enumerate item}{fg=computo}
+\setbeamercolor{description item}{fg=computodark}
+\setbeamercolor{caption name}{fg=computo}
+
+\setbeamercolor{block title}{fg=white, bg=computo}
+\setbeamercolor{block body}{fg=black, bg=codebg}
+\setbeamercolor{block title alerted}{fg=white, bg=accent}
+\setbeamercolor{block body alerted}{fg=black, bg=accent!8}
+\setbeamercolor{block title example}{fg=white, bg=greydark}
+\setbeamercolor{block body example}{fg=black, bg=greylight!50}
+
+\setbeamercolor{footline}{fg=greyc}
+\setbeamercolor{page number in head/foot}{fg=greyc}
+\setbeamercolor{bibliography item}{fg=computo}
+\setbeamercolor*{bibliography entry title}{fg=computodark}
+\setbeamercolor*{bibliography entry author}{fg=greydark}
+\setbeamercolor*{bibliography entry location}{fg=greyc}
+\setbeamercolor*{bibliography entry note}{fg=greyc}
+
+% --- fonts ----------------------------------------------------------------
+% Oswald for headings, Open Sans for body -- same pairing as the web slides.
+% Oswald is shipped in ./fonts; Open Sans is expected to be installed.
+\ifcomputo@sansfonts
+  \RequirePackage{fontspec}
+  \IfFontExistsTF{Open Sans}{%
+    \setsansfont{Open Sans}[
+      UprightFont      = *,
+      ItalicFont       = *  Italic,
+      BoldFont         = * Bold,
+      BoldItalicFont   = * Bold Italic,
+      Ligatures        = TeX]%
+  }{}
+  \IfFontExistsTF{./fonts/Oswald-Regular.ttf}{%
+    \newfontfamily\headingfont{Oswald}[
+      Path            = ./fonts/,
+      Extension       = .ttf,
+      UprightFont     = *-Medium,
+      BoldFont        = *-Bold,
+      Ligatures       = TeX]%
+  }{\let\headingfont\sffamily}
+\else
+  \let\headingfont\sffamily
+\fi
+\renewcommand{\familydefault}{\sfdefault}
+
+\setbeamerfont{title}{family=\headingfont, size=\Huge, series=\bfseries}
+\setbeamerfont{subtitle}{family=\headingfont, size=\large, series=\mdseries}
+\setbeamerfont{author}{size=\normalsize}
+\setbeamerfont{institute}{size=\small}
+\setbeamerfont{date}{size=\small}
+\setbeamerfont{frametitle}{family=\headingfont, size=\LARGE, series=\mdseries}
+\setbeamerfont{framesubtitle}{family=\headingfont, size=\large, series=\mdseries}
+\setbeamerfont{section in toc}{family=\headingfont, size=\large}
+\setbeamerfont{block title}{family=\headingfont, size=\normalsize, series=\mdseries}
+\setbeamerfont{footline}{size=\scriptsize}
+\setbeamerfont{caption}{size=\scriptsize}
+\setbeamerfont{bibliography item}{size=\scriptsize}
+\setbeamerfont{bibliography entry title}{size=\scriptsize, series=\mdseries}
+\setbeamerfont{bibliography entry author}{size=\scriptsize}
+\setbeamerfont{bibliography entry location}{size=\scriptsize}
+\setbeamerfont{bibliography entry note}{size=\scriptsize}
+
+% --- structural templates -------------------------------------------------
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize item}{%
+  \usebeamercolor[fg]{itemize item}\raisebox{0.15ex}{\scriptsize$\blacktriangleright$}}
+\setbeamertemplate{itemize subitem}{%
+  \usebeamercolor[fg]{itemize subitem}\raisebox{0.15ex}{\tiny$\blacktriangleright$}}
+\setbeamertemplate{itemize subsubitem}{%
+  \usebeamercolor[fg]{itemize subsubitem}\raisebox{0.25ex}{\tiny\rule{0.5em}{0.7pt}}}
+\setbeamertemplate{enumerate item}{\insertenumlabel.}
+\setbeamertemplate{caption label separator}{ --- }
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{bibliography item}{\scriptsize\textcolor{computo}{[\theenumiv]}}
+
+% frame title: heading + thin rule, logo mark on the right
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip
+  \vskip 0.9ex
+  \begin{beamercolorbox}[wd=\paperwidth, leftskip=0.9cm, rightskip=0.9cm]{frametitle}%
+    \usebeamerfont{frametitle}\insertframetitle%
+    \ifx\insertframesubtitle\@empty\else
+      \\[-0.2ex]{\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle}%
+    \fi
+    \\[0.35ex]{\color{computo}\rule{\dimexpr\paperwidth-1.8cm\relax}{1pt}}%
+  \end{beamercolorbox}%
+  \vskip 0.4ex
+}
+
+% footline: short title -- logo -- slide number
+% the title slide sets \framenumber to 0 -- no chrome there
+\setbeamertemplate{footline}{%
+  \ifnum\insertframenumber<1\relax\else
+  \hbox{%
+    \begin{beamercolorbox}[wd=.45\paperwidth, ht=2.4ex, dp=1.6ex, leftskip=0.9cm]{footline}%
+      \usebeamerfont{footline}\usebeamercolor[fg]{footline}\insertshorttitle%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.10\paperwidth, ht=2.4ex, dp=1.6ex, center]{footline}%
+      \raisebox{-0.4ex}{\includegraphics[height=1.6ex]{img/logo_notext.pdf}}%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.45\paperwidth, ht=2.4ex, dp=1.6ex, rightskip=0.9cm]{footline}%
+      \hfill\usebeamerfont{footline}\usebeamercolor[fg]{footline}\insertframenumber{}/\inserttotalframenumber%
+    \end{beamercolorbox}%
+  }%
+  \fi
+  \vskip 1.5ex
+}
+
+\setbeamersize{text margin left=0.9cm, text margin right=0.9cm}
+
+% --- title page -----------------------------------------------------------
+\setbeamertemplate{title page}{%
+  \setbeamertemplate{footline}{}%   no chrome on the title slide
+  \addtocounter{framenumber}{-1}%
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[computodark] (current page.north west) rectangle
+      ([yshift=-2.6cm]current page.north east);
+    \node[anchor=north west, inner sep=0pt]
+      at ([shift={(0.9cm,-0.75cm)}]current page.north west)
+      {\includegraphics[height=1.1cm]{img/logo_text_white.pdf}};
+  \end{tikzpicture}%
+  \vskip 1.55cm
+  {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}
+  \ifx\insertsubtitle\@empty\else
+    \vskip 0.6em
+    {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}
+  \fi
+  \vskip 0.5em
+  {\color{computo}\rule{4cm}{2pt}}
+  \vskip 0.9em
+  {\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par}
+  \ifx\insertinstitute\@empty\else
+    \vskip 0.35em
+    {\usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par}
+  \fi
+  \vskip 0.7em
+  {\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par}
+  \vskip 0.4em
+}
+
+% --- section page ---------------------------------------------------------
+\AtBeginSection[]{%
+  \ifcsname computo@nosectionpage\endcsname\else
+  \begin{frame}[plain, noframenumbering]
+    \setbeamercolor{structure}{fg=white}%
+    \setbeamercolor{normal text}{fg=white, bg=computodark}%
+    \hypersetup{linkcolor=white}%
+    \begin{tikzpicture}[remember picture, overlay]
+      \fill[computodark] (current page.north west) rectangle (current page.south east);
+      \node[anchor=south east, inner sep=0pt, opacity=0.12]
+        at ([shift={(-0.6cm,0.6cm)}]current page.south east)
+        {\includegraphics[height=4cm]{img/logo_notext_white.pdf}};
+      \node[anchor=west, text width=0.8\paperwidth, inner sep=0pt]
+        at ([xshift=0.9cm]current page.west)
+        {\headingfont\Huge\color{white}\insertsectionhead
+         \\[0.4em]{\color{computolight}\rule{3cm}{2pt}}};
+    \end{tikzpicture}
+  \end{frame}
+  \fi
+}
+
+% --- helpers usable from the .qmd ----------------------------------------
+% \computolink{url}{text}, \highlight{...}, and a "plain dark" frame background
+\newcommand{\highlight}[1]{{\color{computo}\bfseries #1}}
+\newcommand{\lead}[1]{{\headingfont\color{computodark}\large #1}}
+
+\endinput

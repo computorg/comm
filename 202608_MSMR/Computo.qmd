@@ -1,0 +1,256 @@
+---
+title: "Computo"
+subtitle: "Redefining academic publishing through native computational reproducibility\\newline \\url{https://computo-journal.org}"
+author: "Julien Chiquet$^{1}$ --- on behalf of the Computo Editorial Board"
+institute: "$^{1}$ Université Paris-Saclay, AgroParisTech, INRAE"
+date: 2026-09-01
+date-format: long
+lang: en
+format:
+  beamer:
+    aspectratio: 169
+    classoption: [t]
+    fontsize: 11pt
+    theme: computo
+    pdf-engine: xelatex
+    include-in-header: preamble.tex
+    slide-level: 2
+    incremental: false
+    colorlinks: true
+    linkcolor: computo
+    urlcolor: computo
+    citecolor: computo
+    highlight-style: github
+    keep-tex: false
+    fig-align: center
+bibliography: references.bib
+csl: journal-of-open-research-software.csl
+---
+
+# The problem
+
+## Methodological research asserts more than it demonstrates
+
+A methodological paper claims that a procedure works, on the evidence of simulation
+studies and/or benchmarks --- that is, \highlight{a computation}.
+
+\vspace{0.4em}
+However, the reader receives a PDF with plots/tables, \highlight{not the path that produced them}.
+
+- code and data, when shared at all, are rarely runnable as published
+- peer review examines the argument, essentially never the computation
+- a year later, the environment has moved and nothing builds
+
+\vspace{0.4em}
+::: {.callout-important title="The premise of Computo"}
+If the computation is the evidence, then it should also be reviewed --- and it should still run in ten years.
+:::
+
+## Computo in one slide
+
+:::: {.columns}
+::: {.column width="62%"}
+
+- Created in **2021** under the auspices of the **French Statistical Society** (SFdS)
+- **Diamond open access**: free to read, free to publish --- ISSN 2824-7795
+- **CC-BY 4.0**, authors retain copyright; DOIs registered with DataCite
+- Scope: computational and algorithmic contributions in **statistics and machine learning**
+- Open peer review on **OpenReview**; partner of **PCI Statistics and ML**
+- \highlight{23 papers published} since April 2022
+
+:::
+::: {.column width="38%"}
+
+\centering
+\includegraphics[height=2.5cm]{img/logo_text_vertical.pdf}
+
+\vspace{0.5em}
+\small\faIcon{globe} \url{https://computo-journal.org}
+
+\small\faIcon{github} \url{https://github.com/computorg}
+
+:::
+::::
+
+## What we publish
+
+- **Methods papers** --- original stats/ML developments, or numerical studies that
+  illustrate theoretical results
+- **Case studies and surveys** --- including \highlight{neutral comparison studies}: when,
+  how and why compared methods perform well or less well
+- **Software and tutorial papers** --- an implementation *plus* a concrete use case,
+  with benchmarking against related work
+
+
+\vspace{0.5em}
+::: {.callout-note title="Primary condition"}
+Numerical reproducibility is a \highlight{necessary condition for publication} (neither a badge nor a supplementary file).
+:::
+
+# How it works
+
+## The stack
+
+Every submission is a **git repository** that builds itself.
+
+:::: {.columns}
+::: {.column width="52%"}
+
+1. **Literate programming** --- Quarto: text, equations, code and figures in one source
+2. **Pinned environment** --- `renv.lock`, `requirements.txt`, `Project.toml`
+3. **Continuous integration** --- rebuilt from scratch on our infrastructure, at every push
+4. **Data** --- shipped or deposited (e.g. Zenodo)
+
+:::
+::: {.column width="48%"}
+
+\centering
+\includegraphics[width=\linewidth]{img/workflow.png}
+
+:::
+::::
+
+\vspace{0.3em}
+Templates for **R**, **Python** and **Julia**; the workflow itself is language-agnostic.
+
+## Two review tracks, running in parallel
+
+:::: {.columns}
+::: {.column width="50%"}
+
+\lead{Scientific review}
+
+- Reports are public on OpenReview after acceptance
+- Reviewers may stay anonymous
+- Papers recommended by *PCI Statistics and ML* are accepted without re-review
+
+:::
+::: {.column width="50%"}
+
+\lead{Reproducibility check}
+
+- Automated and continuous, from the first submission
+- Run by the editorial/tech team, not the referees
+- A paper that does not build is not reviewable
+
+:::
+::::
+
+\bigskip
+
+::: {.callout-note title="External recognition"}
+A 2026 comparative review of reproducibility policies [@hornung2026] ranks Computo among
+the \highlight{five journals out of nine} that perform an *independent check* (active, execution-based review) of
+results, alongside JSS, JASA, Meta-Psychology and the Biometrical Journal.
+:::
+
+## After acceptance: keep reproducibility
+
+- Article repository transferred to `github.com/computorg/`
+- DOI registered on DataCite; metadata should make it indexable
+- Review reports published alongside the paper
+- Repository archived on **Software Heritage**
+- Workflows of published articles are \highlight{re-run periodically} to detect decay
+
+\vspace{1em}
+::: {.callout-tip title="Long-term reproducibility is a maintenance activity"}
+Publishing a reproducible artifact is a one-off event. Keeping the article reproducible requires considerably more effort.
+:::
+
+# Four years of evidence
+
+## What the record shows
+
+:::: {.columns}
+::: {.column width="46%"}
+
+\vspace{0.5em}
+\input{figures/papers-per-year.tex}
+
+:::
+::: {.column width="54%"}
+
+\vspace{0.8em}
+
+**23 papers**, April 2022 to July 2026
+
+Languages actually used:
+
+- **R** only --- 14 papers
+- **Python** only --- 6 papers
+- **both** --- 3 papers
+- **Julia** --- template ready, no submission yet
+
+:::
+::::
+
+\vspace{0.3em}
+We have shown the feasibility of our policy: submissions do build, and keep building.
+
+## What it costs, and what transfers to other fields
+
+The cost falls on the *first* submission: templates absorb most of the technical
+burden, and editors gain a new form of check.
+
+\bigskip
+
+:::: {.columns}
+::: {.column width="38%"}
+
+\lead{Still hard}
+
+- \highlight{Finding authors and reviewers}
+- Getting indexed by academic databases
+- Heavy computation and large data
+- Managing outdated dependencies
+
+:::
+::: {.column width="62%"}
+
+\lead{What transfers}
+
+- Nothing in the stack is specific to statistics: only git, notebook templates, a lockfile and CI
+- The editorial move that makes the build a condition is the hard part, but it is "free"
+- Separating *scientific* review from the *reproducibility* check keeps referee load unchanged
+- Diamond needs light infrastructure, a learned-society host and free software
+
+:::
+::::
+
+## Come and try it
+
+:::: {.columns}
+::: {.column width="58%"}
+
+\lead{We are looking for}
+
+- **Authors** --- methods, benchmarks, software papers
+- **Reviewers** --- as in any other journal
+- **Neutral comparison studies**, which fit the scope exactly
+
+\vspace{0.6em}
+\small Pre-submission enquiries are welcome: send a title and abstract.
+
+:::
+::: {.column width="42%"}
+
+\vspace{0.4em}
+\faIcon{globe} \url{https://computo-journal.org}
+
+\faIcon{envelope} \href{mailto:contact@computo-journal.org}{contact@computo-journal.org}
+
+\faIcon{github} \url{https://github.com/computorg}
+
+\vspace{0.8em}
+\centering
+\includegraphics[height=1.8cm]{img/logo_notext.pdf}
+
+:::
+::::
+
+### References {.allowframebreaks}
+
+\small
+
+::: {#refs}
+:::

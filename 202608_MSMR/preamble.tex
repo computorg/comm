@@ -1,0 +1,44 @@
+% Quarto-side tweaks that sit on top of beamerthemecomputo.sty
+\usepackage{fontawesome5}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% code blocks: light Computo-tinted background, no frame
+\usepackage[most]{tcolorbox}
+\definecolor{shadecolor}{HTML}{F2F6F9}
+\makeatletter
+\AtBeginDocument{%
+  \@ifundefined{Shaded}{}{%
+    \renewenvironment{Shaded}{%
+      \begin{tcolorbox}[breakable, boxrule=0pt, frame hidden, sharp corners,
+        enhanced, borderline west={2pt}{0pt}{computo!35},
+        colback=shadecolor, left=4pt, right=4pt, top=2pt, bottom=2pt]}%
+      {\end{tcolorbox}}%
+  }%
+}
+\makeatother
+
+% inline code
+\let\oldtexttt\texttt
+\renewcommand{\texttt}[1]{{\color{computodark}\oldtexttt{#1}}}
+
+% quarto callouts follow the theme colours
+\definecolor{quarto-callout-color}{HTML}{034E79}
+\definecolor{quarto-callout-note-color}{HTML}{034E79}
+\definecolor{quarto-callout-tip-color}{HTML}{02334F}
+\definecolor{quarto-callout-important-color}{HTML}{C1553B}
+\definecolor{quarto-callout-warning-color}{HTML}{C1553B}
+\definecolor{quarto-callout-caution-color}{HTML}{C1553B}
+\definecolor{quarto-callout-note-color-frame}{HTML}{034E79}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02334F}
+\definecolor{quarto-callout-important-color-frame}{HTML}{C1553B}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{C1553B}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{C1553B}
+
+% list spacing (enumitem must NOT be loaded: it breaks beamer's item markers)
+\setlength{\leftmargini}{1.4em}
+\addtobeamertemplate{itemize/enumerate body begin}{\setlength{\itemsep}{0.45em}}{}
+\addtobeamertemplate{itemize/enumerate subbody begin}{\setlength{\itemsep}{0.25em}}{}
+
+% figures: no float placement fights in beamer
+\setkeys{Gin}{keepaspectratio}
