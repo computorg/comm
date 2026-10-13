@@ -29,21 +29,21 @@ csl: journal-of-open-research-software.csl
 
 # The problem
 
-## Methodological research asserts more than it demonstrates
+## Common caveat of methodological research
 
 A methodological paper claims that a procedure works, on the evidence of simulation
-studies and/or benchmarks --- that is, \highlight{a computation}.
+studies or benchmarks, that is, \highlight{a computation}.
 
 \vspace{0.4em}
 However, the reader receives a PDF with plots/tables, \highlight{not the path that produced them}.
 
-- code and data, when shared at all, are rarely runnable as published
-- peer review examines the argument, essentially never the computation
-- a year later, the environment has moved and nothing builds
+- code and data, when shared at all, are barely runnable as published
+- peer review examines the argument, rarely the computation
+- a year later, the software/environment has moved and nothing builds
 
 \vspace{0.4em}
 ::: {.callout-important title="The premise of Computo"}
-If the computation is the evidence, then it should also be reviewed --- and it should still run in ten years.
+If the computation is the evidence, then it should also be reviewed and it should still run in ten years.
 :::
 
 ## Computo in one slide
@@ -52,8 +52,9 @@ If the computation is the evidence, then it should also be reviewed --- and it s
 ::: {.column width="62%"}
 
 - Created in **2021** under the auspices of the **French Statistical Society** (SFdS)
-- **Diamond open access**: free to read, free to publish --- ISSN 2824-7795
-- **CC-BY 4.0**, authors retain copyright; DOIs registered with DataCite
+- **Diamond open access**: free to read, free to publish
+- **CC-BY 4.0**, authors retain copyright
+- DOIs registered with DataCite
 - Scope: computational and algorithmic contributions in **statistics and machine learning**
 - Open peer review on **OpenReview**; partner of **PCI Statistics and ML**
 - \highlight{23 papers published} since April 2022
@@ -68,6 +69,12 @@ If the computation is the evidence, then it should also be reviewed --- and it s
 \small\faIcon{globe} \url{https://computo-journal.org}
 
 \small\faIcon{github} \url{https://github.com/computorg}
+
+ISSN 2824-7795
+
+\vspace{0.5em}
+
+\includegraphics[height=2cm]{img/qrcode_computo-journal.org.png}
 
 :::
 ::::
@@ -84,7 +91,7 @@ If the computation is the evidence, then it should also be reviewed --- and it s
 
 \vspace{0.5em}
 ::: {.callout-note title="Primary condition"}
-Numerical reproducibility is a \highlight{necessary condition for publication} (neither a badge nor a supplementary file).
+Numerical reproducibility is a \highlight{necessary condition for publication} and submission (neither a badge nor a supplementary file).
 :::
 
 # How it works
@@ -138,23 +145,22 @@ Templates for **R**, **Python** and **Julia**; the workflow itself is language-a
 
 \bigskip
 
-::: {.callout-note title="External recognition"}
-A 2026 comparative review of reproducibility policies [@hornung2026] ranks Computo among
-the \highlight{five journals out of nine} that perform an *independent check* (active, execution-based review) of
-results, alongside JSS, JASA, Meta-Psychology and the Biometrical Journal.
+::: {.callout-note title="International recognition"}
+Co-authored a 2026 comparative review of reproducibility policies [@hornung2026] ranking Computo among
+the \highlight{five journals out of nine} that perform an *independent check* (active, execution-based review) of results, alongside JSS, JASA, Meta-Psychology and the Biometrical Journal.
 :::
 
 ## After acceptance: keep reproducibility
 
 - Article repository transferred to `github.com/computorg/`
-- DOI registered on DataCite; metadata should make it indexable
+- DOI registered on DataCite; metadata *should* make it indexable
 - Review reports published alongside the paper
-- Repository archived on **Software Heritage**
+- Repository archived on `https://www.softwareheritage.org/`
 - Workflows of published articles are \highlight{re-run periodically} to detect decay
 
 \vspace{1em}
 ::: {.callout-tip title="Long-term reproducibility is a maintenance activity"}
-Publishing a reproducible artifact is a one-off event. Keeping the article reproducible requires considerably more effort.
+Publishing a reproducible artifact is a one-time event, but keeping the article reproducible requires more effort.
 :::
 
 # Four years of evidence
@@ -200,7 +206,7 @@ burden, and editors gain a new form of check.
 \lead{Still hard}
 
 - \highlight{Finding authors and reviewers}
-- Getting indexed by academic databases
+- Getting indexed by academic databases (and Google scholar!)
 - Heavy computation and large data
 - Managing outdated dependencies
 
@@ -244,6 +250,7 @@ burden, and editors gain a new form of check.
 \vspace{0.8em}
 \centering
 \includegraphics[height=1.8cm]{img/logo_notext.pdf}
+\includegraphics[height=1.8cm]{img/qrcode_computo-journal.org.png}
 
 :::
 ::::
